@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowLeft, Check, Info } from "lucide-react";
+import { ArrowLeft, Check, Info, PartyPopper } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -59,6 +59,8 @@ export default function Checkout() {
     company: "",
     gst: "",
   });
+  const [showPromoSuccess, setShowPromoSuccess] = useState(false);
+  const [savedAmount, setSavedAmount] = useState(0);
 
   const handleConfirmQuotation = async () => {
     const response = await fetch("/api/send-quotation", {
@@ -116,8 +118,10 @@ export default function Checkout() {
     if (promoCode.toLowerCase() === "elevn11@2025") {
       setAppliedCode(promoCode);
       setDiscountPercent(25);
+      const discount = Math.round(orderSummary.subtotal * 0.25);
+      setSavedAmount(discount);
+      setShowPromoSuccess(true);
     } else {
-      // Show error or notification that code is invalid
       alert("Invalid promo code");
     }
   };
@@ -462,6 +466,27 @@ export default function Checkout() {
               }}
             >
               Close
+            </Button>
+          </div>
+        </DialogContent>
+      </Dialog>
+
+      <Dialog open={showPromoSuccess} onOpenChange={setShowPromoSuccess}>
+        <DialogContent className="max-w-[80vw] sm:max-w-md sm:mx-0">
+          <DialogHeader>
+            <div className="flex justify-center mb-4">
+              <PartyPopper className="h-12 w-12 text-primary animate-bounce" />
+            </div>
+            <DialogTitle className="text-center text-2xl">
+              Promo Code Applied!
+            </DialogTitle>
+            <DialogDescription className="text-center text-lg py-4">
+              You saved {formatPrice(savedAmount)}! 🎉
+            </DialogDescription>
+          </DialogHeader>
+          <div className="flex justify-center">
+            <Button onClick={() => setShowPromoSuccess(false)}>
+              Let's get started
             </Button>
           </div>
         </DialogContent>
