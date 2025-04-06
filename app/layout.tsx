@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider";
 const RUBIK = Rubik({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "Elevn11 Agency - Flexible Content Creation",
+  title: "ELEVN 11 - Flexible Content Creation",
   description:
     "Choose from our predefined plans or build your own custom package to meet your exact content creation needs.",
   generator: "v0.dev",

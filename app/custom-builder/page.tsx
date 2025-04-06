@@ -129,6 +129,21 @@ export default function CustomBuilder() {
       description: "Eye-catching promotional material for campaigns",
       basePrice: 700,
     },
+    {
+      id: "logo-design",
+      type: "graphic",
+      name: "Logo Design",
+      description:
+        "Custom logo design for your brand and a brand kit with 3 revisions",
+      basePrice: 5000,
+    },
+    {
+      id: "motion-graphic",
+      type: "graphic",
+      name: "Motion Graphic",
+      description: "Custom motion graphic for your brand",
+      basePrice: 4000,
+    },
   ];
 
   const addonItems: ShopItem[] = [
