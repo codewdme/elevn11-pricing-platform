@@ -9,6 +9,8 @@ import {
   Plus,
   ShoppingCart,
   Trash2,
+  Check,
+  PartyPopper,
 } from "lucide-react";
 import { useRouter } from "next/navigation";
 
@@ -278,6 +280,21 @@ export default function CustomBuilder() {
 
   return (
     <div className="container py-8 px-4 md:px-6 max-w-7xl">
+      {/* Sticky Discount Banner */}
+      <div className="sticky top-0 z-50 bg-primary text-primary-foreground py-2 px-4 rounded-lg shadow-lg mb-8">
+        <div className="flex items-center justify-center gap-2">
+          <PartyPopper className="h-5 w-5 animate-bounce" />
+          <span className="font-semibold">
+            Special Offer: Get 25% OFF on all plans! Use code{" "}
+            <span className="bg-background text-primary px-2 py-1 rounded-md">
+              ELEVN11@2025
+            </span>{" "}
+            at checkout
+          </span>
+          <PartyPopper className="h-5 w-5 animate-bounce" />
+        </div>
+      </div>
+
       <div className="flex items-center mb-8">
         <Link
           href="/"
@@ -295,7 +312,7 @@ export default function CustomBuilder() {
           className="rounded-full shadow-lg bg-background border border-border hover:bg-accent"
           onClick={scrollToCart}
         >
-          <ShoppingCart className="h-4 w-4 mr-2" />
+          <ShoppingCart className="h-4 w-4 mr-2 text-foreground" />
           <Badge variant="secondary" className="ml-1">
             {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
           </Badge>
@@ -304,12 +321,171 @@ export default function CustomBuilder() {
 
       <div>
         <h1 className="text-3xl font-bold tracking-tight mb-2">
-          Custom Plan Builder
+          Choose Your Plan
         </h1>
         <p className="text-muted-foreground mb-8">
-          Build your perfect content creation package by adding exactly what you
-          need.
+          Select from our ready-made plans or build your own custom package
         </p>
+
+        {/* Ready-made Plans */}
+        <div className="grid md:grid-cols-3 gap-6 mb-12">
+          {/* Basic Plan */}
+          <Card className="relative overflow-hidden">
+            <CardHeader>
+              <CardTitle>Basic Plan</CardTitle>
+              <CardDescription>Perfect for small businesses</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold mb-6">
+                {formatPrice(35000)}
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>3 Camera Shoots</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>8 Standard Edits</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>10 Creatives</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>Social Media Management</span>
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                className="w-full"
+                onClick={() => {
+                  const planItems = [
+                    { ...shootItems[1], quantity: 3 }, // 3 camera shoots
+                    { ...editItems[1], quantity: 8 }, // 8 standard edits
+                    { ...graphicItems[0], quantity: 10 }, // 10 creatives
+                    { ...addonItems[0], quantity: 1 }, // social media management
+                  ];
+                  setCartItems(planItems);
+                  scrollToCart();
+                }}
+              >
+                Select Plan
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Pro Plan */}
+          <Card className="relative overflow-hidden border-primary">
+            <div className="absolute top-0 right-0 bg-primary text-primary-foreground px-4 py-1 text-sm font-medium">
+              Popular
+            </div>
+            <CardHeader>
+              <CardTitle>Pro Plan</CardTitle>
+              <CardDescription>Ideal for growing businesses</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold mb-6">
+                {formatPrice(55000)}
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>5 Camera Shoots</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>12 Standard Edits</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>15 Creatives</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>Social Media Management</span>
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                className="w-full"
+                onClick={() => {
+                  const planItems = [
+                    { ...shootItems[1], quantity: 5 }, // 5 camera shoots
+                    { ...editItems[1], quantity: 12 }, // 12 standard edits
+                    { ...graphicItems[0], quantity: 15 }, // 15 creatives
+                    { ...addonItems[0], quantity: 1 }, // social media management
+                  ];
+                  setCartItems(planItems);
+                  scrollToCart();
+                }}
+              >
+                Select Plan
+              </Button>
+            </CardFooter>
+          </Card>
+
+          {/* Enterprise Plan */}
+          <Card className="relative overflow-hidden">
+            <CardHeader>
+              <CardTitle>Enterprise Plan</CardTitle>
+              <CardDescription>For established businesses</CardDescription>
+            </CardHeader>
+            <CardContent>
+              <div className="text-2xl font-bold mb-6">
+                {formatPrice(75000)}
+              </div>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>7 Camera Shoots</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>16 Standard Edits</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>30 Creatives</span>
+                </li>
+                <li className="flex items-center">
+                  <Check className="h-4 w-4 text-primary mr-2" />
+                  <span>Social Media Management</span>
+                </li>
+              </ul>
+            </CardContent>
+            <CardFooter>
+              <Button
+                className="w-full"
+                onClick={() => {
+                  const planItems = [
+                    { ...shootItems[1], quantity: 7 }, // 7 camera shoots
+                    { ...editItems[1], quantity: 16 }, // 16 standard edits
+                    { ...graphicItems[0], quantity: 30 }, // 30 creatives
+                    { ...addonItems[0], quantity: 1 }, // social media management
+                  ];
+                  setCartItems(planItems);
+                  scrollToCart();
+                }}
+              >
+                Select Plan
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+
+        <div className="flex items-center justify-center mb-8">
+          <Separator className="flex-1" />
+          <span className="mx-4 text-muted-foreground">OR</span>
+          <Separator className="flex-1" />
+        </div>
+
+        <h2 className="text-2xl font-bold tracking-tight mb-8">
+          Build Your Custom Plan
+        </h2>
 
         <div className="grid lg:grid-cols-3 gap-8">
           {/* Services Selection */}
