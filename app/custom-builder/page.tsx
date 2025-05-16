@@ -52,35 +52,35 @@ export default function CustomBuilder() {
       type: "shoot",
       name: "Premium Shoot",
       description: "Standard 4-hour shoot with professional camera",
-      basePrice: 5000,
+      basePrice: 6500,
       options: { shootType: "camera" },
     },
     {
       id: "food-shoot",
       type: "shoot",
       name: "Food Shoot",
-      description: "Specialized 4-hour shoot for food photography",
-      basePrice: 5500,
-      options: { shootType: "camera", foodShoot: true },
+      description: "Specialized 5-hour shoot for food photography",
+      basePrice: 8500,
+      options: { shootType: "camera", foodShoot: true, extraHours: 1 },
     },
     {
       id: "extended-shoot",
       type: "shoot",
       name: "Extended Shoot",
       description: "8-hour shoot with professional camera",
-      basePrice: 10000,
+      basePrice: 11500,
       options: { shootType: "camera", extraHours: 4 },
     },
   ];
 
   const editItems: ShopItem[] = [
     {
-      id: "basic-edit",
+      id: "creative-edit",
       type: "edit",
-      name: "Basic Edit",
-      description: "Simple color correction and basic retouching",
-      basePrice: 1000,
-      options: { complexity: "basic" },
+      name: "Creative Edit",
+      description: "Creative color grading and artistic retouching",
+      basePrice: 2000,
+      options: { complexity: "moderate" },
     },
     {
       id: "standard-edit",
@@ -95,23 +95,32 @@ export default function CustomBuilder() {
       type: "edit",
       name: "Premium Edit",
       description: "Advanced retouching, effects, and compositing",
-      basePrice: 2500,
+      basePrice: 3200,
       options: { complexity: "high" },
     },
     {
       id: "vlog-edit",
       type: "edit",
-      name: "Vlog Edit",
-      description: "10min vlog video edit",
-      basePrice: 3000,
+      name: "Vlog Edit + Graphics",
+      description: "10min vlog video edit with graphical content and overlays",
+      basePrice: 4000,
       options: { complexity: "high" },
     },
     {
       id: "long-edit",
       type: "edit",
-      name: "Long Edit",
-      description: "5min basic long video edit",
+      name: "Long Video Edit (Simple Vlogs)",
+      description: "5min basic long video edit for simple vlog content",
       basePrice: 3000,
+      options: { complexity: "high" },
+    },
+    {
+      id: "motion-face-edit",
+      type: "edit",
+      name: "Motion Graphic + Face Content",
+      description:
+        "Professional motion graphics with face content video editing",
+      basePrice: 5000,
       options: { complexity: "high" },
     },
   ];
@@ -280,21 +289,6 @@ export default function CustomBuilder() {
 
   return (
     <div className="container py-8 px-4 md:px-6 max-w-7xl">
-      {/* Sticky Discount Banner */}
-      <div className="sticky top-0 z-50 bg-primary text-primary-foreground py-2 px-4 rounded-lg shadow-lg mb-8">
-        <div className="flex items-center justify-center gap-2">
-          <PartyPopper className="h-5 w-5 animate-bounce" />
-          <span className="font-semibold">
-            Special Offer: Get 25% OFF on all plans! Use code{" "}
-            <span className="bg-background text-primary px-2 py-1 rounded-md">
-              ELEVN11@2025
-            </span>{" "}
-            at checkout
-          </span>
-          <PartyPopper className="h-5 w-5 animate-bounce" />
-        </div>
-      </div>
-
       <div className="flex items-center mb-8">
         <Link
           href="/"

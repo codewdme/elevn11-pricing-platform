@@ -26,6 +26,13 @@ import { Separator } from "@/components/ui/separator";
 import { useRouter } from "next/navigation";
 
 import { Alert, AlertDescription } from "@/components/ui/alert";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 // Define types for cart items
 export interface CartItem {
@@ -254,28 +261,39 @@ export default function Checkout() {
                 </div>
 
                 <div className="pt-4">
-                  <Label htmlFor="promo-code">Promo Code</Label>
+                  <Label htmlFor="promo-code">Apply Coupon</Label>
                   <div className="flex gap-2 mt-1">
-                    <Input
-                      id="promo-code"
-                      placeholder="Enter promo code"
+                    <Select
                       value={promoCode}
-                      onChange={(e) => setPromoCode(e.target.value)}
-                    />
-                    <Button onClick={applyPromoCode} variant="outline">
-                      Apply
-                    </Button>
+                      onValueChange={(value) => {
+                        setPromoCode(value);
+                        if (value === "eleven11-save15") {
+                          setAppliedCode(value);
+                          setDiscountPercent(15);
+                          const discount = Math.round(
+                            orderSummary.subtotal * 0.15
+                          );
+                          setSavedAmount(discount);
+                          setShowPromoSuccess(true);
+                        }
+                      }}
+                    >
+                      <SelectTrigger className="w-full">
+                        <SelectValue placeholder="Select a coupon" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="eleven11-save15">
+                          eleven11-save15 - 15% OFF
+                        </SelectItem>
+                      </SelectContent>
+                    </Select>
                   </div>
                   {appliedCode && (
                     <div className="flex items-center mt-2 text-sm text-green-600">
                       <Check className="h-4 w-4 mr-1" />
-                      <span>Promo code applied successfully!</span>
+                      <span>Coupon applied successfully!</span>
                     </div>
                   )}
-                  <p className="text-xs text-muted-foreground mt-2">
-                    Use code <span className="font-semibold">ELEVN11@2025</span>{" "}
-                    to get 25% OFF
-                  </p>
                 </div>
               </CardContent>
             </Card>
@@ -290,7 +308,7 @@ export default function Checkout() {
                     <h3 className="font-medium mb-1">Shoots</h3>
                     <p className="text-muted-foreground">
                       Standard shoot duration is 4 hours. Raw files are
-                      included. Additional hours are charged at ₹1000/hr.
+                      included. Additional hours are charged at ₹1,500/hr.
                     </p>
                   </div>
                   <div>
