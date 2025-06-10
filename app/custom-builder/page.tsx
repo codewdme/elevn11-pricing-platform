@@ -331,7 +331,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(35000)}
+                {formatPrice(42500)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -382,7 +382,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(55000)}
+                {formatPrice(64500)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -430,7 +430,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(75000)}
+                {formatPrice(92500)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
