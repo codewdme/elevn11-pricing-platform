@@ -51,7 +51,7 @@ export default function Home() {
         {/* Promo Banner */}
         <Alert className="border-primary/20 bg-primary/5 max-w-5xl mx-auto mb-8">
           <AlertDescription className="text-center font-medium">
-            Use code <span className="font-bold">ELEVEN11@2025</span> to get 25%
+            Use code <span className="font-bold">NEW15</span> to get 15%
             OFF
             <span className="block text-sm text-muted-foreground mt-1">
               (Auto-applies discount if entered at checkout)
