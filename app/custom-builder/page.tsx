@@ -52,7 +52,7 @@ export default function CustomBuilder() {
       type: "shoot",
       name: "Food Shoot",
       description: "Specialized 5-hour shoot for food photography",
-      basePrice: 12500,
+      basePrice: 14500,
       options: { shootType: "camera", foodShoot: true, extraHours: 1 },
     },
     {
@@ -68,7 +68,7 @@ export default function CustomBuilder() {
       type: "shoot",
       name: "Extended Shoot hours (1 hr)",
       description: "1-hour shoot with professional camera",
-      basePrice: 2500,
+      basePrice: 2700,
       options: { shootType: "camera", extraHours: 4 },
     },
     {
@@ -87,7 +87,7 @@ export default function CustomBuilder() {
       type: "edit",
       name: "Creative Edit",
       description: "Creative color grading and artistic retouching",
-      basePrice: 2000,
+      basePrice: 2600,
       options: { complexity: "moderate" },
     },
     {
@@ -95,7 +95,7 @@ export default function CustomBuilder() {
       type: "edit",
       name: "Premium Edit",
       description: "Advanced retouching, effects, and compositing",
-      basePrice: 3500,
+      basePrice: 4200,
       options: { complexity: "high" },
     },
     {
@@ -111,7 +111,7 @@ export default function CustomBuilder() {
       type: "edit",
       name: "Long Video Edit (Simple Vlogs)",
       description: "5min basic long video edit for simple vlog content",
-      basePrice: 6000,
+      basePrice: 7000,
       options: { complexity: "high" },
     },
     {
@@ -120,7 +120,7 @@ export default function CustomBuilder() {
       name: "Motion Graphic + Face Content",
       description:
         "Professional motion graphics with face content video editing",
-      basePrice: 6000,
+      basePrice: 7000,
       options: { complexity: "high" },
     },
   ];
@@ -138,7 +138,7 @@ export default function CustomBuilder() {
       type: "graphic",
       name: "Promotional Graphic",
       description: "Eye-catching promotional material for campaigns",
-      basePrice: 1000,
+      basePrice: 1200,
     },
     {
       id: "logo-design",
@@ -146,7 +146,7 @@ export default function CustomBuilder() {
       name: "Logo Design",
       description:
         "Custom logo design for your brand and a brand kit with 3 revisions",
-      basePrice: 5000,
+      basePrice: 9000,
     },
     {
       id: "motion-graphic",
@@ -160,14 +160,14 @@ export default function CustomBuilder() {
       type: "graphic",
       name: "Graphic Creative (Size A4 or below)",
       description: "Custom graphic creative for your brand",
-      basePrice: 1500,
+      basePrice: 1800,
     },
     {
       id: "flex-creative",
       type: "graphic",
       name: "Flex Creative (Size 1m x 1m - max 5m x 5m)",
       description: "Custom flex creative for your brand",
-      basePrice: 3500,
+      basePrice: 4200,
     },
     {
       id: "flex-creative-2",
@@ -191,7 +191,7 @@ export default function CustomBuilder() {
       type: "addon",
       name: "Social Media Management",
       description: "Complete management of your social media accounts",
-      basePrice: 10000,
+      basePrice: 9000,
     },
     {
       id: "meta-ads",
