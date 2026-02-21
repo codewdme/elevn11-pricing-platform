@@ -122,10 +122,10 @@ export default function Checkout() {
   }, []);
 
   const applyPromoCode = () => {
-    if (promoCode.toLowerCase() === "elevn11@2025") {
+    if (promoCode.toLowerCase() === "new15") {
       setAppliedCode(promoCode);
-      setDiscountPercent(25);
-      const discount = Math.round(orderSummary.subtotal * 0.25);
+      setDiscountPercent(15);
+      const discount = Math.round(orderSummary.subtotal * 0.15);
       setSavedAmount(discount);
       setShowPromoSuccess(true);
     } else {
