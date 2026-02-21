@@ -69,7 +69,7 @@ export default function CustomBuilder() {
       name: "Extended Shoot hours (1 hr)",
       description: "1-hour shoot with professional camera",
       basePrice: 2700,
-      options: { shootType: "camera", extraHours: 4 },
+      options: { shootType: "camera", extraHours: 1 },
     },
     {
       id: "extra-lights",
