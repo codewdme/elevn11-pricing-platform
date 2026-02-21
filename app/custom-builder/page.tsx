@@ -69,7 +69,7 @@ export default function CustomBuilder() {
       name: "Extended Shoot hours (1 hr)",
       description: "1-hour shoot with professional camera",
       basePrice: 2700,
-      options: { shootType: "camera", extraHours: 1 },
+      options: { shootType: "camera", extraHours: -3 },
     },
     {
       id: "extra-lights",
@@ -153,7 +153,7 @@ export default function CustomBuilder() {
       type: "graphic",
       name: "Motion Graphic",
       description: "Custom motion graphic for your brand - 10 seconds max",
-      basePrice: 2000,
+      basePrice: 2800,
     },
     {
       id: "graphic-creative",
