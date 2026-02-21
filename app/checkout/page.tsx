@@ -267,7 +267,7 @@ export default function Checkout() {
                       value={promoCode}
                       onValueChange={(value) => {
                         setPromoCode(value);
-                        if (value === "eleven11-save15") {
+                        if (value === "new15") {
                           setAppliedCode(value);
                           setDiscountPercent(15);
                           const discount = Math.round(
@@ -282,8 +282,8 @@ export default function Checkout() {
                         <SelectValue placeholder="Select a coupon" />
                       </SelectTrigger>
                       <SelectContent>
-                        <SelectItem value="eleven11-save15">
-                          eleven11-save15 - 15% OFF
+                        <SelectItem value="new15">
+                          new15 - 15% OFF
                         </SelectItem>
                       </SelectContent>
                     </Select>
@@ -308,7 +308,7 @@ export default function Checkout() {
                     <h3 className="font-medium mb-1">Shoots</h3>
                     <p className="text-muted-foreground">
                       Standard shoot duration is 4 hours. Raw files are
-                      included. Additional hours are charged at ₹1,500/hr.
+                      included. Additional hours are charged at ₹2,700/hr.
                     </p>
                   </div>
                   <div>
@@ -328,7 +328,7 @@ export default function Checkout() {
                   <div>
                     <h3 className="font-medium mb-1">Contract Terms</h3>
                     <p className="text-muted-foreground">
-                      Monthly plans require a minimum 2-month commitment.
+                      Monthly plans require a minimum 3-month commitment.
                       One-time packages include a 10% markup.
                     </p>
                   </div>
