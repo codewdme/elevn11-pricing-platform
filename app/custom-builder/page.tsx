@@ -40,19 +40,11 @@ export default function CustomBuilder() {
   // Available items to add to cart
   const shootItems: ShopItem[] = [
     {
-      id: "basic-shoot",
+      id: "creative-shoot",
       type: "shoot",
-      name: "Basic Shoot",
-      description: "Standard 4-hour shoot with phone-quality camera",
-      basePrice: 4000,
-      options: { shootType: "phone" },
-    },
-    {
-      id: "premium-shoot",
-      type: "shoot",
-      name: "Premium Shoot",
+      name: "Creative Shoot",
       description: "Standard 4-hour shoot with professional camera",
-      basePrice: 6500,
+      basePrice: 10500,
       options: { shootType: "camera" },
     },
     {
@@ -60,7 +52,7 @@ export default function CustomBuilder() {
       type: "shoot",
       name: "Food Shoot",
       description: "Specialized 5-hour shoot for food photography",
-      basePrice: 8500,
+      basePrice: 12500,
       options: { shootType: "camera", foodShoot: true, extraHours: 1 },
     },
     {
@@ -68,8 +60,24 @@ export default function CustomBuilder() {
       type: "shoot",
       name: "Extended Shoot",
       description: "8-hour shoot with professional camera",
-      basePrice: 11500,
+      basePrice: 18000,
       options: { shootType: "camera", extraHours: 4 },
+    },
+    {
+      id: "extended-shoot-hr",
+      type: "shoot",
+      name: "Extended Shoot hours (1 hr)",
+      description: "1-hour shoot with professional camera",
+      basePrice: 2500,
+      options: { shootType: "camera", extraHours: 4 },
+    },
+    {
+      id: "extra-lights",
+      type: "shoot",
+      name: "Extra Lighting (PER HOUR)",
+      description: "Extra lighting for the shoot",
+      basePrice: 500,
+      options: { shootType: "camera" },
     },
   ];
 
@@ -83,27 +91,19 @@ export default function CustomBuilder() {
       options: { complexity: "moderate" },
     },
     {
-      id: "standard-edit",
-      type: "edit",
-      name: "Standard Edit",
-      description: "Color grading, retouching, and basic effects",
-      basePrice: 1500,
-      options: { complexity: "moderate" },
-    },
-    {
       id: "premium-edit",
       type: "edit",
       name: "Premium Edit",
       description: "Advanced retouching, effects, and compositing",
-      basePrice: 3200,
+      basePrice: 3500,
       options: { complexity: "high" },
     },
     {
       id: "vlog-edit",
       type: "edit",
       name: "Vlog Edit + Graphics",
-      description: "10min vlog video edit with graphical content and overlays",
-      basePrice: 4000,
+      description: "5min vlog video edit with graphical content and overlays",
+      basePrice: 9000,
       options: { complexity: "high" },
     },
     {
@@ -111,7 +111,7 @@ export default function CustomBuilder() {
       type: "edit",
       name: "Long Video Edit (Simple Vlogs)",
       description: "5min basic long video edit for simple vlog content",
-      basePrice: 3000,
+      basePrice: 6000,
       options: { complexity: "high" },
     },
     {
@@ -120,7 +120,7 @@ export default function CustomBuilder() {
       name: "Motion Graphic + Face Content",
       description:
         "Professional motion graphics with face content video editing",
-      basePrice: 5000,
+      basePrice: 6000,
       options: { complexity: "high" },
     },
   ];
@@ -131,14 +131,14 @@ export default function CustomBuilder() {
       type: "graphic",
       name: "Social Media Graphic",
       description: "Custom graphic optimized for social media platforms",
-      basePrice: 600,
+      basePrice: 1000,
     },
     {
       id: "promotional-graphic",
       type: "graphic",
       name: "Promotional Graphic",
       description: "Eye-catching promotional material for campaigns",
-      basePrice: 700,
+      basePrice: 1000,
     },
     {
       id: "logo-design",
@@ -152,8 +152,36 @@ export default function CustomBuilder() {
       id: "motion-graphic",
       type: "graphic",
       name: "Motion Graphic",
-      description: "Custom motion graphic for your brand",
-      basePrice: 4000,
+      description: "Custom motion graphic for your brand - 10 seconds max",
+      basePrice: 2000,
+    },
+    {
+      id: "graphic-creative",
+      type: "graphic",
+      name: "Graphic Creative (Size A4 or below)",
+      description: "Custom graphic creative for your brand",
+      basePrice: 1500,
+    },
+    {
+      id: "flex-creative",
+      type: "graphic",
+      name: "Flex Creative (Size 1m x 1m - max 5m x 5m)",
+      description: "Custom flex creative for your brand",
+      basePrice: 3500,
+    },
+    {
+      id: "flex-creative-2",
+      type: "graphic",
+      name: "Flex Creative (Size 5m x 5m - max 25m x 25m)",
+      description: "Custom flex creative for your brand",
+      basePrice: 9000,
+    },
+    {
+      id: "gif-creative",
+      type: "graphic",
+      name: "AI Made Video Gif Creative (motion enabled - 8 seconds max - 1 revision)",
+      description: "Custom ai madevideo gif creative for your brand",
+      basePrice: 1500,
     },
   ];
 
@@ -163,35 +191,35 @@ export default function CustomBuilder() {
       type: "addon",
       name: "Social Media Management",
       description: "Complete management of your social media accounts",
-      basePrice: 5000,
+      basePrice: 10000,
     },
     {
       id: "meta-ads",
       type: "addon",
       name: "Meta Ads",
       description: "Facebook and Instagram ad campaign management",
-      basePrice: 5000,
+      basePrice: 9000,
     },
     {
       id: "google-ads",
       type: "addon",
       name: "Google Ads",
       description: "Google search and display ad campaign management",
-      basePrice: 5000,
+      basePrice: 9000,
     },
     {
       id: "dm-handling",
       type: "addon",
       name: "DM Handling",
       description: "Management of direct messages across platforms",
-      basePrice: 5000,
+      basePrice: 9000,
     },
     {
       id: "google-queries",
       type: "addon",
       name: "Google Queries",
       description: "Monitoring and responding to Google reviews and queries",
-      basePrice: 5000,
+      basePrice: 9000,
     },
   ];
 
@@ -331,7 +359,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(42500)}
+                {formatPrice(52500)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -382,7 +410,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(64500)}
+                {formatPrice(93000)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -391,7 +419,7 @@ export default function CustomBuilder() {
                 </li>
                 <li className="flex items-center">
                   <Check className="h-4 w-4 text-primary mr-2" />
-                  <span>12 Standard Edits</span>
+                  <span>12 Creative Edits</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-4 w-4 text-primary mr-2" />
@@ -430,7 +458,7 @@ export default function CustomBuilder() {
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold mb-6">
-                {formatPrice(92500)}
+                {formatPrice(128000)}
               </div>
               <ul className="space-y-3">
                 <li className="flex items-center">
@@ -439,7 +467,7 @@ export default function CustomBuilder() {
                 </li>
                 <li className="flex items-center">
                   <Check className="h-4 w-4 text-primary mr-2" />
-                  <span>16 Standard Edits</span>
+                  <span>16 Creative Edits</span>
                 </li>
                 <li className="flex items-center">
                   <Check className="h-4 w-4 text-primary mr-2" />
